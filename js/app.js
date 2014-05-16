@@ -13,7 +13,7 @@ $(".controls li").click(function(){
 });
 
 
-//When add color is pressed
+//When "New Color" is pressed
 $("#revealColorSelect").click(function(){
   //Show color select or hide the color select
   changeColor();
@@ -32,9 +32,16 @@ function changeColor() {
 //When color sliders change
 $("input[type=range]").change(changeColor)
 
-//When add color is pressed
+//When "Add Color" is pressed
+$("#addNewColor").click(function(){
   //Append the color to the controls ul
+  var $newColor = $("<li></li>");
+  $newColor.css("background-color", $("#newColor").css("background-color"));
+  $(".controls ul").append($newColor);
   //Select the new color
+  $newColor.click();
+});
+
 
 //On mouse events on the canvas
   //Draw lines
